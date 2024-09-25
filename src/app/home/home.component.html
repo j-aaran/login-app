@@ -1,0 +1,19 @@
+<div class="min-h-80 items-center flex flex-col justify-around p-12">
+    <div class="text-3xl flex justify-center md:text-5xl mt-2 mb-6 font-light ">
+    
+    <div *ngIf="user; else templateElse">
+        Bienvenido(a) {{ user.name }}
+    </div>
+
+    <ng-template #templateElse>
+        Error fetching the user data
+    </ng-template>
+
+
+    </div>
+
+    <div class="flex flex-row space-x-8">
+        <button (click)="blockUser()" class="text-red-600 hover:underline">Bloquear sesión</button>
+        <button (click)="signOut()" class="text-red-600 hover:underline">Cerrar sesión</button>
+    </div>
+</div>

@@ -1,0 +1,45 @@
+/* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+    Se define una variable para luego usarla como color primario 
+    de la app. Se declaran dos clases de css. Una para el color primario
+    en los textos y otra en los backgrounds
+*/
+:root{
+    --app-color: #db142c;
+}
+
+.app-color{
+    color: var(--app-color);
+}
+
+.bg-app-color{
+    background-color: var(--app-color);
+}
+
+/*
+    Código css para eliminar los bordes de los 
+    inputs durante el enfoque
+*/
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus {
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    outline: none;
+    /* Para establecer un color de fondo distinto*/
+    background-color: aliceblue;
+}
+
+/*
+    Animación para demorar el efecto de fondo 
+    al enfocar el elemento
+*/
+input{
+    transition: 0.5s;
+}
+

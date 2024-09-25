@@ -1,0 +1,28 @@
+<div class="min-h-80 items-center flex flex-col justify-around p-12">
+
+    <!-- Forgot password: Recuperar contraseña -->
+    <div class="text-3xl flex justify-center md:text-5xl mt-2 mb-4 md:mb-6 font-light ">
+      Desbloquear sesión
+    </div>
+    <div class="text-md flex text-center justify-center md:mt-0 mb-6 font-medium text-gray-500">
+      Ingrese su contraseña para salir de inactividad.
+    </div>
+
+    <div *ngIf="this.showAlert">
+      <div class="border-solid border-1 border-red-700 bg-red-400 px-4 py-2 rounded-xl text-white">
+        {{this.alert}}
+      </div>
+    </div>
+    
+
+    <form [formGroup]="unlockSessionForm" class="flex flex-col items-center min-h-64 justify-around">
+      <input 
+        class="mt-8 w-64 px-4 text-lg py-2 border-b-2 border-red-600 border-solid" 
+        [formControlName]="'password'" 
+        type="password" 
+        placeholder="Contraseña" 
+        required>
+      <button (click)="unlock()" class="px-4 py-2 w-40 bg-app-color mt-2 rounded-full text-white font-bold hover:bg-red-700">Desbloquear</button>
+    </form>
+  
+  </div>

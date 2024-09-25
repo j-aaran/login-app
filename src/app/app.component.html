@@ -1,0 +1,25 @@
+<!-- Barra de navegación -->
+<app-navbar></app-navbar>
+
+<!-- 
+    Dentro de este componente se renderizará
+    la vista correspondiente, a saber:
+    - Inicio de sesión
+    - Registro
+    - Olvidó su contraseña
+    - Desbloquear sesión
+    - Transfer365 (?) 
+ <router-outlet></router-outlet>
+    -->
+<router-outlet></router-outlet>
+
+<!-- 
+    Links mostrados debajo de los formularios para navegar
+    por la autenticación. Si el usuario está autenticado, ocultarlos 
+-->
+<div *ngIf="!isAuthenticated">
+    <app-links></app-links>
+</div>
+
+<!-- Footer -->
+<app-footer></app-footer>

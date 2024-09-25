@@ -1,0 +1,58 @@
+<div class="min-h-80 items-center flex flex-col justify-around p-12">
+
+  <!-- Sign Up : Registro -->
+  <div class="text-3xl flex justify-center md:text-5xl mt-2 mb-6 font-light ">
+    Registro
+  </div>
+  
+  <div *ngIf="this.showAlert">
+
+    <div *ngIf="this.alert.status == 'success'">
+      <div class="border-solid border-1 border-green-700 bg-green-400 px-4 py-2 rounded-xl text-white">
+        {{this.alert.message}}
+      </div>
+      <a routerLink="/sign-in" class="text-red-600 hover:underline">Iniciar Sesión</a>
+    </div>
+      
+
+    <div *ngIf="this.alert.status == 'error'">
+      <div class="border-solid border-1 border-red-700 bg-red-400 px-4 py-2 rounded-xl text-white">
+        {{this.alert.message}}
+      </div>
+    </div>
+    
+
+  </div>
+  
+
+  <div *ngIf="this.showForm">
+
+    <form [formGroup]="signUpForm" class="flex flex-col items-center min-h-64 justify-around">
+      <input [formControlName]="'name'" 
+        type="text" 
+        class="w-64 mb-5 px-4 py-2 border-b-2 text-md border-red-600 border-solid"
+        placeholder="Nombre" 
+        required>
+      <input [formControlName]="'email'" 
+        type="email" 
+        class="w-64 mb-5 px-4 py-2 border-b-2 text-md border-red-600 border-solid"
+        placeholder="Email" 
+        required>
+      <input [formControlName]="'password'" 
+        type="password" 
+        class="w-64 mb-5 px-4 py-2 border-b-2 text-md border-red-600 border-solid"
+        placeholder="Contraseña" 
+        required>
+      <input [formControlName]="'password_confirmation'" 
+        type="password" 
+        class="w-64 mb-5 px-4 py-2 border-b-2 text-md border-red-600 border-solid"
+        placeholder="Confirmar contraseña" 
+        required>
+      <button (click)="signUp()" class="px-4 py-2 w-40 bg-app-color mt-2 rounded-full text-white font-bold hover:bg-red-700">Registrarme</button>
+    </form>
+
+  </div>
+  
+    
+
+</div>

@@ -1,0 +1,25 @@
+<div class="min-h-80 items-center flex flex-col justify-around p-12">
+
+    <!-- Sign In: Login -->
+    <div class="text-3xl flex justify-center md:text-5xl mt-2 mb-6 font-light ">
+      Autenticación del cliente
+    </div>
+
+    <div *ngIf="this.showAlert">
+      <div class="border-solid border-1 border-red-700 bg-red-400 px-4 py-2 rounded-xl text-white">
+        {{this.alert}}
+      </div>
+    </div>
+    
+
+    <form [formGroup]="signInForm" class="flex flex-col items-center min-h-64 justify-around">
+      <input
+        class="mt-8 w-64 px-4 text-lg py-2 border-b-2 border-red-600 border-solid" 
+        [formControlName]="'idNumber'" 
+        type="password"
+        placeholder="Ingrese número identificación" 
+        required>
+      <button (click)="signIn()" class="px-4 py-2 w-40 bg-app-color mt-2 rounded-full text-white font-bold hover:bg-red-700">Ingresar</button>
+    </form>
+
+</div>
