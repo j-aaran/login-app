@@ -8,7 +8,7 @@ import { ConfirmationRequiredComponent } from './auth/confirmation-required/conf
 import { NewPasswordComponent } from './auth/new-password/new-password.component';
 import { UnlockSessionComponent } from './auth/unlock-session/unlock-session.component';
 
-const routes: Routes = [
+export const routes: Routes = [
   {path: '', redirectTo: 'sign-in', pathMatch: 'full'},
   {path: 'sign-in', component: SignInComponent},
   {path: 'sign-up', component: SignUpComponent},
@@ -19,8 +19,10 @@ const routes: Routes = [
   {path: 'home', component: HomeComponent},
 ];
 
+/*
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
+*/

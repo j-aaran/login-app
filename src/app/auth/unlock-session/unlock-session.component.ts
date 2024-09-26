@@ -1,11 +1,13 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, ReactiveFormsModule, Validators, FormsModule } from '@angular/forms';
 import { Router, RouterLink } from '@angular/router';
 import { AuthService } from '../../core/auth/auth.service';
 import { NgIf } from '@angular/common';
 
 @Component({
   selector: 'app-unlock-session',
+  standalone: true,
+  imports: [ FormsModule,NgIf, ReactiveFormsModule ],
   templateUrl: './unlock-session.component.html',
   styleUrls: ['./unlock-session.component.css']
 })

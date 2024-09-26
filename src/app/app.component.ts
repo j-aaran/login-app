@@ -13,7 +13,7 @@ import { AuthService } from './core/auth/auth.service';
   selector: 'app-root',
   standalone: true,
   imports: [
-    RouterOutlet, 
+    RouterOutlet,
     ReactiveFormsModule,
     FormsModule,
     NgIf,
